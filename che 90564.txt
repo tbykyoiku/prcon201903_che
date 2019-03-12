@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <style>
+                table, td{border-color: black; border-collapse: collapse; border: 1px solid; width: 5cm; text-align: center;}
+                #fq{font-size: 20pt;}
+        </style>
+    
+</head>
+<body>
+        <h1 style=color:blue>以下の問題に答えください</h1>
+        
+        <p>空欄に入る数字はなんでしょうか</p>
+    <table id="fq">
+    <tr>
+        <td>2</td>
+        <td>4</td>
+        <td>8</td>
+        <td>7</td>  
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>10</td>
+        <td>11</td>
+        <td id="ans"></td>  
+    </tr>  
+
+
+    </table>
+<form>
+    <input id="n1" type="radio" name="bogi" value="11">11<br>
+    <input id="n2" type="radio" name="bogi" value="12">12<br>
+    <input id="y1" type="radio" name="bogi" value="13">13<br>
+    <input id="n3" type="radio" name="bogi" value="14">14<br>
+</form>   
+    <input type="button" value="回答" onclick="aaa()"><input type="button" value="理由" onclick="bbb()" disabled id="why"><br>
+    <p id="oo"></p>
+    <p id="ooo"></p>
+<script> 
+ function aaa(){
+     if(y1.checked){
+     document.getElementById("ans").innerHTML="13"
+     document.getElementById("oo").innerHTML="正解です"
+     document.getElementById("why").disabled=false;
+     }
+     else if(n1.checked | n2.checked | n3.checked){
+        document.getElementById("ans").innerHTML=""
+        document.getElementById("ooo").innerHTML=""
+         document.getElementById("oo").innerHTML="↑やり直してください"
+         document.getElementById("why").disabled=true;
+         window.alert("間違いました")
+         
+     }
+     else{
+        document.getElementById("ans").innerHTML=""
+        document.getElementById("ooo").innerHTML=""
+         document.getElementById("oo").innerHTML="↑チェックしてください"
+         document.getElementById("why").disabled=true;
+         window.alert("チェックしてください")
+     }
+    } 
+ function bbb(){
+        document.getElementById("ooo").innerHTML="上の左から右の方向に2乗した各桁の値を足した値"
+           }
+/*made by che*/
+</script>    
+</body>
+</html>
